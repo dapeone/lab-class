@@ -1,0 +1,25 @@
+public class DocumentManager
+{
+  // Метод для отображения информации о документе
+  public void DisplayDocumentInfo(Document document)
+  {
+    Console.WriteLine(document.GetDocumentInfo());
+  }
+
+  // Паттерн Singleton для обеспечения единственного экземпляра DocumentManager
+  private static DocumentManager instance;
+  private DocumentManager() { } // Приватный конструктор
+
+  // Свойство для получения единственного экземпляра DocumentManager
+  public static DocumentManager Instance
+  {
+    get
+    {
+      if (instance == null)
+      {
+        instance = new DocumentManager();
+      }
+        return instance;
+    }
+  }
+}
