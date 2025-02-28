@@ -1,0 +1,15 @@
+public class PdfDocument : Document
+{
+  public string PdfVersion { get; set; }
+
+  public PdfDocument(string name, string author, string keywords, string subject, string filePath, string pdfVersion)
+    : base(name, author, keywords, subject, filePath)
+  {
+    PdfVersion = pdfVersion;
+  }
+
+  public override string GetDocumentInfo()
+  {
+    return $"PDF Document: {Name}, Author: {Author}, Keywords: {Keywords}, Subject: {Subject}, File Path: {FilePath}, PDF Version: {PdfVersion}";
+  }
+}
