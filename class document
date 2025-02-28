@@ -1,0 +1,21 @@
+using System;
+
+public abstract class Document
+{
+  public string Name { get; set; }
+  public string Author { get; set; }
+  public string Keywords { get; set; }
+  public string Subject { get; set; }
+  public string FilePath { get; set; }
+
+  public Document(string name, string author, string keywords, string subject, string filePath)
+  {
+    Name = name;
+    Author = author;
+    Keywords = keywords;
+    Subject = subject;
+    FilePath = filePath;
+  }
+
+  public abstract string GetDocumentInfo();
+}
