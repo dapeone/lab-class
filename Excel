@@ -1,0 +1,15 @@
+public class ExcelDocument : Document
+{
+  public int SheetCount { get; set; }
+
+  public ExcelDocument(string name, string author, string keywords, string subject, string filePath, int sheetCount)
+    : base(name, author, keywords, subject, filePath)
+  {
+    SheetCount = sheetCount;
+  }
+
+  public override string GetDocumentInfo()
+  {
+    return $"Excel Document: {Name}, Author: {Author}, Keywords: {Keywords}, Subject: {Subject}, File Path: {FilePath}, Sheet Count: {SheetCount}";
+  }
+}

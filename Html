@@ -1,0 +1,15 @@
+public class HtmlDocument : Document
+{
+  public string Charset { get; set; }
+
+  public HtmlDocument(string name, string author, string keywords, string subject, string filePath, string charset)
+    : base(name, author, keywords, subject, filePath)
+  {
+    Charset = charset;
+  }
+
+  public override string GetDocumentInfo()
+  {
+    return $"HTML Document: {Name}, Author: {Author}, Keywords: {Keywords}, Subject: {Subject}, File Path: {FilePath}, Charset: {Charset}";
+  }
+}

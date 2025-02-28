@@ -1,0 +1,15 @@
+public class TxtDocument : Document
+{
+  public bool IsRichText { get; set; }
+
+  public TxtDocument(string name, string author, string keywords, string subject, string filePath, bool isRichText)
+    : base(name, author, keywords, subject, filePath)
+  {
+    IsRichText = isRichText;
+  }
+
+  public override string GetDocumentInfo()
+  {
+    return $"TXT Document: {Name}, Author: {Author}, Keywords: {Keywords}, Subject: {Subject}, File Path: {FilePath}, Is Rich Text: {IsRichText}";
+  }
+}

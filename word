@@ -1,0 +1,15 @@
+public class WordDocument : Document
+{
+  public int WordCount { get; set; }
+
+  public WordDocument(string name, string author, string keywords, string subject, string filePath, int wordCount)
+    : base(name, author, keywords, subject, filePath)
+  {
+    WordCount = wordCount;
+  }
+
+  public override string GetDocumentInfo()
+  {
+    return $"Word Document: {Name}, Author: {Author}, Keywords: {Keywords}, Subject: {Subject}, File Path: {FilePath}, Word Count: {WordCount}";
+  }
+}
