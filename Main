@@ -1,0 +1,55 @@
+class Program
+{
+  static void Main(string[] args)
+  {
+    DocumentManager manager = DocumentManager.Instance;
+
+    while (true)
+    {
+      Console.WriteLine("Выберите тип документа для отображения информации:");
+      Console.WriteLine("1. Word Document");
+      Console.WriteLine("2. PDF Document");
+      Console.WriteLine("3. Excel Document");
+      Console.WriteLine("4. TXT Document");
+      Console.WriteLine("5. HTML Document");
+      Console.WriteLine("0. Выход");
+      Console.Write("Ваш выбор: ");
+
+      string choice = Console.ReadLine();
+      if (choice == "0") break;
+
+      Document document = null;
+
+      switch (choice)
+      {
+        case "1":
+          document = new WordDocument("Документ Word", "Автор 1", "Ключевые слова", "Тематика", "C:\\Documents\\doc1.docx", 1200);
+          break;
+
+        case "2":
+          document = new PdfDocument("Документ PDF", "Автор 2", "Ключевые слова", "Тематика", "C:\\Documents\\doc2.pdf", "1.4");
+          break;
+
+        case "3":
+          document = new ExcelDocument("Документ Excel", "Автор 3", "Ключевые слова", "Тематика", "C:\\Documents\\doc3.xlsx", 5);
+          break;
+
+        case "4":
+          document = new TxtDocument("Документ TXT", "Автор 4", "Ключевые слова", "Тематика", "C:\\Documents\\doc4.txt", true);
+          break;
+
+        case "5":
+          document = new HtmlDocument("Документ HTML", "Автор 5", "Ключевые слова", "Тематика", "C:\\Documents\\doc5.html", "UTF-8");
+          break;
+
+        default:
+          Console.WriteLine("Некорректный выбор. Попробуйте снова.");
+          continue;
+        }
+
+      // Отображение информации о документе
+      manager.DisplayDocumentInfo(document);
+      Console.WriteLine();
+    }
+  }
+}
